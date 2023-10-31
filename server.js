@@ -23,13 +23,9 @@ const cartRoute = require('./routes/cart');
 const userRoute = require('./routes/user');
 const authRoute = require('./routes/auth');
 
-//middleware
-const corsOptions = {
-	origin: 'http://localhost:5173', // Replace with your React app's origin
-	credentials: true, // Enable credentials (cookies) in cross-origin requests
-};
+
   
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.urlencoded({ extended: true }));
